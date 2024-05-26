@@ -34,11 +34,13 @@ public class MyService extends Service {
         return START_STICKY;
     }
 
-    // Извиква се, когато сървисът не се изплзва повече и се разрушава
+    // Извиква се, когато сървисът не се използва повече и се разрушава
     @Override
     public void onDestroy() {
         super.onDestroy();
         mediaPlayer.stop();
         Toast.makeText(this, "Service destroyed ...", Toast.LENGTH_LONG).show();
     }
+
+
 }

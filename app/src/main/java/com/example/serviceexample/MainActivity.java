@@ -1,11 +1,10 @@
 package com.example.serviceexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,19 +18,9 @@ public class MainActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startButton);
         stopButton = findViewById(R.id.stopButton);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startService(new Intent(MainActivity.this, MyService.class));
-            }
-        });
+        startButton.setOnClickListener(v -> startService(new Intent(MainActivity.this, MyService.class)));
 
-        stopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopService(new Intent(MainActivity.this, MyService.class));
-            }
-        });
-
+        stopButton.setOnClickListener(v -> stopService(new Intent(MainActivity.this, MyService.class)));
     }
+
 }
